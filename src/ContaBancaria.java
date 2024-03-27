@@ -28,6 +28,7 @@ public class ContaBancaria {
         while (opcao != 4){
             System.out.println(menu);
             opcao = leitura.nextInt();
+            System.out.println("teste");
 
         }
     }
