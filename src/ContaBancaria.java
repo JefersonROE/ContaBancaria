@@ -28,8 +28,26 @@ public class ContaBancaria {
         while (opcao != 4){
             System.out.println(menu);
             opcao = leitura.nextInt();
-            System.out.println("teste");
 
+            if (opcao == 1){
+                System.out.println("Seu saldo atual é: " + saldo);
+            } else if (opcao == 2) {
+                System.out.println("Qual o valor que você deseja transferir? ");
+                double valor = leitura.nextDouble();
+                if (valor > saldo){
+                    System.out.println("Não é possivel realizar essa transação, devido o saldo ser insuficiente.");
+                }else {
+                    saldo -= valor;
+                    System.out.println("Seu saldo atual é: " + saldo);
+                }
+            } else if (opcao == 3) {
+                System.out.println("Qual o valor à receber? ");
+                double valor = leitura.nextDouble();
+                saldo += valor;
+                System.out.println("Seu saldo atual é: " + saldo);
+            } else if (opcao != 4) {
+                System.out.println("Digite um número válido.");
+            }
         }
     }
 }
